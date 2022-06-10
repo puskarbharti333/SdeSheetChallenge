@@ -5,7 +5,7 @@ int merge(vector<int> &arr, int low, int mid, int high){
     int i = low, j = mid + 1;
     
     for(int i = low; i <= mid; i++){
-        while(j <= high && arr[i] > (2*arr[j])){
+        while(j <= high && arr[i] > (2*arr[j])){ // check for the condition and increase the j
             j++;
         }
         count = count + (j - (mid+1));
