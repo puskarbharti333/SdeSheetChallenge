@@ -7,7 +7,7 @@ bool findTargetInMatrix(vector < vector < int >> & mat, int m, int n, int target
         return false;
     }
     
-    for(int i = 0; i < m; i++){
+    for(int i = 0; i < m; i++){ // First find the row in first col where the target can be found
         if(mat[i][0]==target){
             return true;
         }
@@ -20,8 +20,8 @@ bool findTargetInMatrix(vector < vector < int >> & mat, int m, int n, int target
         }
     }
     
-    if(row >= 0){
-        while (l <= h){
+    if(row >= 0){ // If row is found
+        while (l <= h){ // Binary search on that row
             mid = (l+h)/2;
             if(mat[row][mid] == target){
                 return true;

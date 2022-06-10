@@ -10,11 +10,11 @@ vector<int> majorityElementII(vector<int> &arr)
         else if (x == num2) count2++;
         else if(count1 == 0){
             num1 = x;
-            count1 = 1;
+            count1++;
         }
         else if(count2 == 0){
             num2 = x; 
-            count2 = 1;
+            count2++;
         }
         else{
             count1--; count2--;

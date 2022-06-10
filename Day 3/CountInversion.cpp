@@ -1,10 +1,12 @@
 #include <bits/stdc++.h>
 
+// Just Implement the Merge Sort and if A[i] > A[j] then increase the count by (mid-i)
+
 long long merge(long long A[], int l, int mid, int h){
     int count = 0;
-    int i = l, j = mid, k = l;
+    int i = l, j = mid, k = l; // J will be intitalized with mid
     int temp[h+1];
-    while(i <= mid-1 && j <= h){
+    while(i <= mid-1 && j <= h){ // as mid + 1 so i <= mid-1
         if(A[i] <= A[j]){
             temp[k++] = A[i++];
         }
@@ -35,7 +37,7 @@ long long mergeSort(long long A[], int l, int h){
         invCount += mergeSort(A, l, mid);
         invCount += mergeSort(A, mid+1, h);
         
-        invCount += merge(A, l, mid+1, h);
+        invCount += merge(A, l, mid+1, h); // mid + 1;
         
     }
     return invCount;
